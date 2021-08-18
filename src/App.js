@@ -12,7 +12,7 @@ function App() {
 			setResult('⚠️ Birthday Invalid');
 			return;
 		}
-		if (!luckyNumber || !Number.isInteger) {
+		if (!luckyNumber || !Number.isInteger(+luckyNumber)) {
 			setResult('⚠️ LuckyNumber Invalid');
 			return;
 		}
@@ -25,8 +25,6 @@ function App() {
 				sum += digit;
 			}
 		}
-
-		console.log(birthday, luckyNumber, sum);
 
 		// if sum of digits is divisible by luckyNumber.
 		if (sum % +luckyNumber === 0) {
